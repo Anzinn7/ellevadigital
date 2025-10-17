@@ -1,105 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Elevva</title>
-    <!-- Alpine.js para menu mobile -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elleva | Criação de Sites e Soluções Digitais</title>
+  <meta name="description" content="A Elleva cria sites modernos e otimizados para ajudar seu negócio a crescer. Design que converte, código que impulsiona.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="w-full h-[100dvh] bg-zinc-900 text-white">  
-    <div id="container" class="w-full h-full">
-        <!-- Header responsivo -->
-        <header x-data="{ open: false }" class="w-full h-[70px] flex justify-between items-center px-4 bg-zinc-800 relative">
-            <h3 class="text-xl font-bold tracking-widest">ELLEVA</h3>
-            <!-- Botão menu mobile -->
-            <button @click="open = !open" class="sm:hidden flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white" aria-label="Abrir menu">
-                <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
-                </svg>
-                <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-            <!-- Menu mobile -->
-            <nav :class="open ? 'flex' : 'hidden'" class="absolute top-[70px] left-0 w-full bg-zinc-900 flex-col items-center gap-4 py-4 sm:static sm:flex sm:flex-row sm:bg-transparent sm:w-auto sm:py-0 z-20 transition-all duration-300">
-                <a href="#sobrenos" class="block px-4 py-2 text-white hover:text-green-400 transition-colors">Sobre nós</a>
-                <a href="#projetos" class="block px-4 py-2 text-white hover:text-green-400 transition-colors">Projetos</a>
-            </nav>
-        </header>
-        <!-- Main responsivo -->
-        <main class="w-full h-full flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10 px-2 pt-8 sm:pt-0">
-            <div id="txt-prc" class="w-full max-w-[700px] h-auto flex flex-col justify-center items-center">
-                <h1 class="text-center text-[48px] xs:text-[64px] sm:text-[120px] font-semibold leading-tight">ELLEVA</h1>
-                <p class="text-center text-lg xs:text-xl sm:text-3xl font-extralight mt-2 sm:mt-4">
-                    o <span class="font-semibold text-zinc-400">Design</span> que converte o <span class="font-semibold text-green-400">Código</span> que inpulsiona
-                </p>
-            </div>
-        </main>
-        <footer></footer>
+<body class="bg-zinc-900 text-white font-sans min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header x-data="{ open: false }" class="w-full h-[70px] flex justify-between items-center px-4 bg-zinc-800 fixed top-0 z-50 shadow-md">
+    <h3 class="text-xl font-bold tracking-widest">ELLEVA</h3>
+    <nav :class="open ? 'flex' : 'hidden'" class="absolute top-[70px] left-0 w-full bg-zinc-900 flex-col items-center gap-4 py-4 sm:static sm:flex sm:flex-row sm:bg-transparent sm:w-auto sm:py-0 transition-all duration-300">
+      <a href="#sobrenos" class="block px-4 font-semibold py-2 hover:text-green-400 transition-colors">SOBRE NÓS</a>
+      <a href="#projetos" class="block px-4 font-semibold py-2 hover:text-green-400 transition-colors">PROJETOS</a>
+      <a href="https://wa.me/5511962817390?text=Olá!%20Gostaria%20de%20um%20site%20para%20meu%20negócio." 
+         target="_blank" 
+         class="block sm:hidden bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all">
+         WhatsApp
+      </a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="https://wa.me/5511962817390?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20meu%20site." 
+         target="_blank" 
+         class="hidden sm:flex bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all duration-300">
+         Fale conosco
+      </a>
+      <button @click="open = !open" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+        <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+        <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
+  </header>
 
-    <div id="sobrenos" class="w-full h-full bg-white">
-        <h3 class="text-2xl sm:text-3xl font-semibold text-gray-600 text-center p-8 sm:p-14">MELHORIAS PARA O SEU NEGÓCIO</h3>
-        <div class="bg-white py-10 sm:py-24 mx-auto">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <dl class="grid grid-cols-1 gap-y-8 gap-x-0 sm:gap-x-8 sm:gap-y-16 text-center lg:grid-cols-3">
-                    <!-- Alcance online -->
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4 bg-zinc-100 rounded-xl p-6 shadow-sm">
-                        <dt class="text-base/7 font-semibold text-xl sm:text-2xl text-gray-600">Alcance online</dt>
-                        <dd class="order-first text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                            +70%
-                        </dd>
-                        <p class="text-sm text-gray-500">Empresas com site são encontradas até 70% mais rápido no Google</p>
-                    </div>
-                    <!-- Credibilidade -->
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4 bg-zinc-100 rounded-xl p-6 shadow-sm">
-                        <dt class="text-base/7 font-semibold text-xl sm:text-2xl text-gray-600">Mais credibilidade</dt>
-                        <dd class="order-first text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                            84%
-                        </dd>
-                        <p class="text-sm text-gray-500">Dos consumidores confiam mais em negócios que têm presença online</p>
-                    </div>
-                    <!-- Vendas e leads -->
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4 bg-zinc-100 rounded-xl p-6 shadow-sm">
-                        <dt class="text-base/7 font-semibold text-xl sm:text-2xl text-gray-600">Vendas e novos clientes</dt>
-                        <dd class="order-first text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                            até 2x
-                        </dd>
-                        <p class="text-sm text-gray-500">Um site pode dobrar as chances de fechar negócios</p>
-                    </div>
-                </dl>
-            </div>
-        </div>
-    </div> <!-- Fim Sobre Nós -->
+  <!-- Hero -->
+  <main class="flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 sm:pb-32">
+    <h1 class="text-[56px] sm:text-[120px] font-extrabold leading-tight">ELLEVA</h1>
+    <p class="text-xl sm:text-3xl font-light mt-4 max-w-2xl">
+      O <span class="font-semibold text-zinc-400">Design</span> que converte,
+      O <span class="font-semibold text-green-400">Código</span> que impulsiona.
+    </p>
+  </main>
 
-    <div id="projetos" class="w-full h-full bg-zinc-900 flex flex-col items-center text-white">
-        <h3 class="text-2xl sm:text-3xl font-semibold text-white text-center p-8 sm:p-14">PROJETOS RECENTES</h3>
-        <div class="w-full flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-4 p-4 sm:p-10">
-            <div class="w-full max-w-[340px] h-[420px] bg-zinc-800 rounded-lg hover:scale-105 transition-all duration-300 mb-6 sm:mb-0 shadow-lg">
-                <img src="assets/projeto1.png" alt="Projeto 1" class="w-full h-[200px] object-cover rounded-t-lg">
-                <div class="p-4">
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">AG CONSTRUTORA</h4>
-                    <p class="text-sm text-zinc-400">Solução digital completa para construtora, com portfólio de obras, formulário de orçamento e apresentação institucional para conquistar novos clientes.</p>      
-                </div>
-            </div>
-            <div class="w-full max-w-[340px] h-[420px] bg-zinc-800 rounded-lg hover:scale-105 transition-all duration-300 mb-6 sm:mb-0 shadow-lg">
-                <img src="assets/projeto2.png" alt="Projeto 2" class="w-full h-[200px] object-cover rounded-t-lg">
-                <div class="p-4">
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">BARBER MASTER</h4>
-                    <p class="text-sm text-zinc-400">Site moderno para barbearia, com agendamento online, galeria de cortes, apresentação da equipe e integração com redes sociais.</p>      
-                </div>
-            </div>
-            <div class="w-full max-w-[340px] h-[420px] bg-zinc-800 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg">
-                <img src="assets/projeto3.png" alt="Projeto 3" class="w-full h-[200px] object-cover rounded-t-lg">
-                <div class="p-4">
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">RESTAURANTE CASEIRO</h4>
-                    <p class="text-sm text-zinc-400">Página para restaurante com cardápio atualizado, sistema de pedidos, localização no mapa e destaque para promoções e avaliações de clientes.</p>      
-                </div>
-            </div>
+  <!-- Sobre Nós -->
+  <section id="sobrenos" class="bg-white text-gray-700 py-20 sm:py-32 px-6">
+    <h3 class="text-3xl font-semibold text-center mb-12">Melhorias para o seu negócio</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="bg-zinc-100 rounded-xl p-8 text-center shadow hover:shadow-lg transition">
+        <h4 class="text-2xl font-semibold mb-3 text-gray-800">Alcance online</h4>
+        <p class="text-5xl font-bold text-green-500 mb-2">+70%</p>
+        <p class="text-gray-500">Empresas com site são encontradas até 70% mais rápido no Google.</p>
+      </div>
+      <div class="bg-zinc-100 rounded-xl p-8 text-center shadow hover:shadow-lg transition">
+        <h4 class="text-2xl font-semibold mb-3 text-gray-800">Mais credibilidade</h4>
+        <p class="text-5xl font-bold text-green-500 mb-2">84%</p>
+        <p class="text-gray-500">Dos consumidores confiam mais em negócios que têm presença online.</p>
+      </div>
+      <div class="bg-zinc-100 rounded-xl p-8 text-center shadow hover:shadow-lg transition">
+        <h4 class="text-2xl font-semibold mb-3 text-gray-800">Vendas e novos clientes</h4>
+        <p class="text-5xl font-bold text-green-500 mb-2">até 2x</p>
+        <p class="text-gray-500">Um site pode dobrar as chances de fechar novos negócios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="bg-zinc-900 text-white py-20 sm:py-32 px-6">
+    <h3 class="text-3xl font-semibold text-center mb-12">Projetos Recentes</h3>
+    <div class="flex flex-wrap justify-center gap-10">
+      <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition w-[340px]">
+        <img src="assets/projeto1.png" alt="AG Construtora" class="w-full h-[200px] object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold mb-2">AG CONSTRUTORA</h4>
+          <p class="text-sm text-zinc-400">Solução digital completa para construtora, com portfólio, orçamento e apresentação institucional.</p>
         </div>
-    </div><!-- Fim Projetos Recentes -->
+      </div>
+      <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition w-[340px]">
+        <img src="assets/projeto2.png" alt="Barber Master" class="w-full h-[200px] object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold mb-2">BARBER MASTER</h4>
+          <p class="text-sm text-zinc-400">Site moderno para barbearia com agendamento online, galeria de cortes e integração com redes sociais.</p>
+        </div>
+      </div>
+      <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition w-[340px]">
+        <img src="assets/projeto3.png" alt="Restaurante Caseiro" class="w-full h-[200px] object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold mb-2">RESTAURANTE CASEIRO</h4>
+          <p class="text-sm text-zinc-400">Página para restaurante com cardápio, sistema de pedidos, localização e promoções.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-800 py-6 text-center text-sm text-gray-400">
+    <p>© 2025 Elleva - Todos os direitos reservados.</p>
+    <a href="https://wa.me/5511962817390?text=Olá!%20Gostaria%20de%20falar%20sobre%20meu%20site." 
+       target="_blank" 
+       class="block mt-2 text-green-400 hover:underline">
+       Fale conosco no WhatsApp
+    </a>
+  </footer>
 
 </body>
 </html>
